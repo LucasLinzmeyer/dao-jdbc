@@ -156,7 +156,7 @@ public class SellerDaoJDBC implements SellerDao {
         return obj;
     }
 
-    private Department instantiateDepartment(ResultSet rs) throws SQLException {
+    public Department instantiateDepartment(ResultSet rs) throws SQLException {
         Department dep = new Department();
         dep.setId(rs.getInt("DepartmentId"));
         dep.setName(rs.getString("DepName"));
@@ -206,7 +206,7 @@ public class SellerDaoJDBC implements SellerDao {
     }
 
     @Override
-    public List<Seller> fingByDepartment(Department department) {
+    public List<Seller> findByDepartment(Department department) {
 
         PreparedStatement st = null;
         ResultSet rs = null;
